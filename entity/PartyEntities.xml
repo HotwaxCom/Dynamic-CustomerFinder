@@ -53,7 +53,6 @@
             <detail relationship="type"/>
             <detail relationship="organization"/>
             <detail relationship="person"/>
-            <detail relationship="badges"/>
             <detail relationship="classifications">
                 <detail relationship="classification">
                     <detail relationship="type"/>
@@ -62,10 +61,6 @@
             <detail relationship="contents">
                 <detail relationship="type"/>
             </detail>
-            <detail relationship="identifications">
-                <detail relationship="type"/>
-            </detail>
-            <detail relationship="notes"/>
             <detail relationship="roles">
                 <detail relationship="role"/>
             </detail>
@@ -121,9 +116,6 @@
         <field name="annualRevenue" type="currency-amount"/>
         <field name="numEmployees" type="number-integer"/>
         <relationship type="one" related="mantle.party.Party"/>
-        <index name="PTY_ORG_NAME_IDX">
-            <index-field name="organizationName"/>
-        </index>
     </entity>
     <entity entity-name="Person" package="mantle.party">
         <field name="partyId" type="id" is-pk="true"/>
@@ -154,12 +146,6 @@
         <relationship type="one" title="ResidenceStatus" related="moqui.basic.Enumeration">
             <key-map field-name="residenceStatusEnumId"/>
         </relationship>
-        <index name="FIRST_NAME_IDX">
-            <index-field name="firstName"/>
-        </index>
-        <index name="LAST_NAME_IDX">
-            <index-field name="lastName"/>
-        </index>
         <seed-data>
             <moqui.basic.EnumerationType description="Marital Status" enumTypeId="MaritalStatus"/>
             <moqui.basic.Enumeration description="Single" enumId="MarsSingle" enumTypeId="MaritalStatus"/>
