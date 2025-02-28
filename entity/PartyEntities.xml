@@ -41,16 +41,6 @@
         <relationship type="many" related="mantle.party.contact.PartyContactMech" short-alias="contactMechs">
             <key-map field-name="partyId"/>
         </relationship>
-        <index name="PARTY_ID_PSEUDO" unique="true">
-            <index-field name="pseudoId"/>
-            <index-field name="ownerPartyId"/>
-        </index>
-        <index name="PARTY_ID_EXT">
-            <index-field name="externalId"/>
-        </index>
-        <index name="PARTY_ID_MERGETO">
-            <index-field name="mergedToPartyId"/>
-        </index>
         <seed-data>
             <moqui.basic.EnumerationType description="Party Type" enumTypeId="PartyType"/>
             <moqui.basic.Enumeration description="Automated Agent" enumId="PtyAutomatedAgent" enumTypeId="PartyType"/>
